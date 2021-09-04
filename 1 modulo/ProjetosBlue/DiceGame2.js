@@ -61,7 +61,7 @@ do {
     })
     .reverse();
   // console.log(lista)
-  if (
+  if (//caso tenha 3 empates
     lista[0].RodadaAtual == lista[1].RodadaAtual &&
     lista[1].RodadaAtual == lista[2].RodadaAtual
   ) {
@@ -108,4 +108,5 @@ lista.sort(function (a, b) {
 lista.reverse();
 console.log(`\n O grande vencedor é: ${lista[0].Jogador}`);
 console.log("=============================\n              Pódio");
-console.log(lista);
+console.log(lista);  //proxima versão: limitar jogadores por tamanho do dado e/ou quantidade de rodadas -> 
+                   //talvez criar salas e colocar jogadores de modo que não atrapalhe estatisticamente os resultados
