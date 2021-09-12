@@ -1,15 +1,15 @@
 const prompt = require("prompt-sync")();
 //controladores
-let  fimVotacao=false,
-finalizar,
-controleFacultativo = 0,
-  pass =false
-  //objetos
-  votosValidos = [
-    { contadorVotos: 0, numero: 1, porcentagem: 0 },
-    { contadorVotos: 0, numero: 2, porcentagem: 0 },
-    { contadorVotos: 0, numero: 3, porcentagem: 0 },
-  ];
+let fimVotacao = false,
+  finalizar,
+  controleFacultativo = 0,
+  pass = false;
+//objetos
+votosValidos = [
+  { contadorVotos: 0, numero: 1 },
+  { contadorVotos: 0, numero: 2 },
+  { contadorVotos: 0, numero: 3 },
+];
 brancosENulos = { votosBrancos: 0, votosNulos: 0 };
 //Função que autoriza o votosValidos
 const autorizaVoto = function (anoNascimento) {
@@ -55,7 +55,7 @@ const votoFacultativo = function (b) {
   //só pra treinar funções
   if (b == 0) {
     do {
-      controleFacultativo =0;
+      controleFacultativo = 0;
       console.log("Responda com Sim ou Não");
       let facultativo = prompt("Deseja votar nessa eleição?")
         .toUpperCase()
@@ -66,7 +66,7 @@ const votoFacultativo = function (b) {
       } else if (facultativo == "N") {
         a = false;
         controleFacultativo++;
-        console.log('Você escolheu não votar nessa eleição\n')
+        console.log("Você escolheu não votar nessa eleição\n");
       } else {
         console.log("Resposta inválida. Tente novamente.");
       }
@@ -90,12 +90,12 @@ const exibirResultados = function () {
 //Programa
 do {
   let controleNascimento = 0,
-  contagemVotos = 0;
+    contagemVotos = 0;
   do {
     //validando dado anoNascimento
-    console.log()
+    console.log();
     anoNascimento = prompt("Nasceu em que ano?");
-    console.log()
+    console.log();
     if (anoNascimento > 0) {
       controleNascimento++;
     } else {
@@ -113,40 +113,40 @@ do {
     do {
       //pega o voto
       voto = prompt("Digite sua opção de voto").toUpperCase().slice(0, 1);
-      console.log()
+      console.log();
       if (voto == 1 || voto == 2 || voto == 3 || voto == 4 || voto == 5) {
         votacao(a, voto);
-        contagemVotos++
+        contagemVotos++;
       } else {
         console.log("Valor inválido. Tente Novamente");
       }
     } while (contagemVotos != 1);
-}
-do{
-  console.log()
-  finalizar = prompt('Deseja encerrar a votação?').toUpperCase().slice(0, 1);
-  console.log()
-  if(finalizar == 'N'){
-    pass = true
-  } else if (finalizar == "S") {
-   fimVotacao = true;
-   pass=true
-    //organizando a lista
-    votosValidos
-      .sort(function (a, b) {
-        if (a.contadorVotos > b.contadorVotos) {
-          return 1;
-        }
-        if (a.contadorVotos < b.contadorVotos) {
-          return -1;
-        }
-        return 0;
-      })
-      .reverse();
-    exibirResultados();
-  }else{
-    console.log('Valor inválido. Digite sim ou não')
-    pass = false
   }
-}while(pass == false);
+  do {
+    console.log();
+    finalizar = prompt("Deseja encerrar a votação?").toUpperCase().slice(0, 1);
+    console.log();
+    if (finalizar == "N") {
+      pass = true;
+    } else if (finalizar == "S") {
+      fimVotacao = true;
+      pass = true;
+      //organizando a lista
+      votosValidos
+        .sort(function (a, b) {
+          if (a.contadorVotos > b.contadorVotos) {
+            return 1;
+          }
+          if (a.contadorVotos < b.contadorVotos) {
+            return -1;
+          }
+          return 0;
+        })
+        .reverse();
+      exibirResultados();
+    } else {
+      console.log("Valor inválido. Digite sim ou não");
+      pass = false;
+    }
+  } while (pass == false);
 } while (fimVotacao == false);
