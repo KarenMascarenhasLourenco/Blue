@@ -114,7 +114,7 @@ class Mundial extends Regional{
         super.semiFinal()
     }
     final(){ 
-        super.Final()
+        super.final()
     }
 }
 //Criação de ambientes
