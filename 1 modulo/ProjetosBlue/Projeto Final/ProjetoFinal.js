@@ -561,6 +561,7 @@ local.final()
                 regional.final()
                 control++
             }else if(voltaCasa=='N'){
+                console.log(`Você venceu o torneio local e é o ${local.titulo}e leva pra casa ${local.premio}`)
                 control++
                 break
             }else{
@@ -579,7 +580,13 @@ local.final()
                     mundial.quartasFinal()
                     mundial.semiFinal()
                     mundial.final();
+                    if (proximaFase===true){
+                        console.log(`Você é o maior de todos o grande ${mundia.titulo}e leva pra casa ${(local.premio+regional.premio+mundial.premio)}`)
+                    }else{ 
+                        console.log(`Você venceu o torneio local e o regional é o ${local.titulo}e ${regional.titulo} leva pra casa ${(local.premio+regional.premio)}`)
+                    }
                 }else if(voltaCasa=='N'){
+                    console.log(`Você venceu o torneio local e o regional é o ${local.titulo}e ${regional.titulo} leva pra casa ${(local.premio+regional.premio)}`)
                     control++
                     break
                 }else{
