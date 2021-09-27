@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="1.7">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Karen Louren&#231;o"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="26/08/2021 15:26:25"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="contador" type="Integer" array="False" size="" variables="contador"/>
+            <declare name="score" type="Integer" array="False" size="" variables="score"/>
+            <declare name="telefoneVitima" type="String" array="False" size="" variables="telefoneVitima"/>
+            <output expression="&quot;Telefonou pra v&#237;tima?&quot;"/>
+            <input variable="telefoneVitima"/>
+            <while expression="telefoneVitima != &quot;S&quot; &amp;&amp; telefoneVitima != &quot;N&quot;">
+                <output expression="&quot;Telefonou para a v&#237;tima?&quot;"/>
+                <input variable="telefoneVitima"/>
+            </while>
+            <output expression="telefoneVitima"/>
+        </body>
+    </function>
+</flowgorithm>

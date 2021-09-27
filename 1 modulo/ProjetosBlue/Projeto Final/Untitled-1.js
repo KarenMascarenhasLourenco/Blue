@@ -1,0 +1,8 @@
+/let local = new Torneio(a,10000,a,false)
+//local.final()
+//let mundial= new Mundial('MUNDIAL',10000000,"Campeão mundial",false)
+//mundial.faseGrupos()
+//mundial.oitavasFinal()
+//mundial.quartasFinal()
+//mundial.semiFinal()
+//mundial.final()
